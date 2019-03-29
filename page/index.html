@@ -13,12 +13,13 @@
 <body>
     <header class="header">
         <div class="container">
-            <a href="/" class="title">丰雪的个人博客 | 技术博客</a>
+            <a href="/" class="title">丰雪的个人博客&nbsp;| &nbsp;技术博客</a>
             <ul class="menu">
                 <li><a href="/">首页</a></li>
                 <li><a href="/sitemap.html">地图</a></li>
                 <li><a href="/about.html">关于</a></li>
                 <li><a href="/guestbook.html">留言</a></li>
+                <li><a href="/edit-blog.html"> &nbsp;写博客</a></li>
             </ul>
             <div class="search_bar">
                 <input type="text" placeholder="请输入关键词查找">
@@ -37,7 +38,7 @@
             </div> 
             <div class="artical_list" id="artical_list">
                 <div class="artical" v-for="artical in articalList">
-                    <a @href="artical.link" class="artical-title">{{artical.title}}</a>
+                    <a :href="artical.link" class="artical-title">{{artical.title}}</a>
                     <p class="artical-content">{{artical.content}}</p>
                     <div class="artical-foot">发布于{{artical.data}} | 浏览({{artical.view}}) | Tags：{{artical.tags}}</div>
                 </div>

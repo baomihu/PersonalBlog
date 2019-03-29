@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>丰雪的博客详情</title>
     <link rel="stylesheet" href="./css/base.css">
-    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/blog-detail.css">
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
 
 </head>
@@ -26,7 +26,108 @@
             </div>
         </div>
     </header>
-   
+    <div class="content">   
+            <div class="content-left">
+                <div class="edit-artical">
+                        <div class="title">
+                                <h1>得心应手使用Git</h1>
+                        </div>
+                        <span class="info">作者: 丰雪 分类: git, 随手笔记 发布于: 2019-03-20 16:04 浏览(2,287) 没有评论</span>
+                         <p class="art-text">
+                                    <p> Git------强大的分布式版本控制系统  </p>
+                    
+                                    <p>首先需要安装git然后创建本地仓库（repository）这个目录里的文件都被git管理起来</p>
+                                    
+                                    <p>创建Git仓库只需在当前目录下初始化它     可以用ls -ah 查看本地出现了 .git文件</p>
+                                    <br>
+                                    <p>$ git init</p>
+                                    <br>
+                                    <p>把文件添加到本地仓库</p>   
+                                    
+                                    <p> $ git add filename</p>
+                                    <br>
+                                    <p>可以使用add添加多个文件 现在只是把文件添加到暂存区 要把文件真正存储到仓库还需要下步 git add . 所有更改的都添加到仓库 把文件提交到本地仓库 </p><br><br>
+                                   <p> $ git commit -m "本次提交说明"</p>
+                                   <p> 本地仓库就配置的差不多了，接下来配置远程仓库</p>
+                                    
+                                   <p> 添加远程仓库</p>
+                                    
+                                   <p> 在GitHub上 点击New repository 创建新的仓库 或者找到已经存在的库 点击clone or download 复制这个库的地址</p><br>
+                                    
+                                  <p>  $ git remote add origin +自己库的地址</p><br>
+                                  <p>  这个样子本地仓库和远程仓库就联系在一起了</p>
+                                    
+                                  <p> 把本地库的内容发布到远程库上 </p>  
+                                    
+                                  <p> 首先需要克隆下远程仓库到本地</p>
+                                    
+                                  <p> git clone +自己远程仓库地址</p>
+                                  <p>  $ git push -u origin masterbr   </p>
+                                    <p>  这个样子git就可以使用了，接下来的是实际开发中常用的命令</p>
+                                    
+                                    <p> 查看当前状态</p>
+                                    
+                                   <p> git status </p>
+                                   <p>打印日志 每次修改的内容 </p>
+                                    
+                                   <p>git log </p>
+                                   <p> git reflog 详细日志 </p>
+                                   <p> 撤销修改 </p>
+                                    
+                                   <p>  git checkout --filename  撤销工作区的修改 </p>
+                                   <p>  git reset HEAD 撤销暂存区的修改 （add过后的）</p>
+                                   <p>  版本回退</p>
+                                    
+                                   <p> git reset --hard HEAD^ 回退到上一版本</p>
+                                   <p>  git reset --hard  commit_id 回退到指定版本</p>
+                                   <p>  git reflog 查看详细日志 (最前面的编码就是commit_id)</p>
+                                   <p>  分支管理</p>
+                                    
+                                   <p>   $ git branch dev 创建名叫dev的分支</p>
+                                    <p>   $ git branch     显示所有分支</p>
+                                    <p>  $ git checkout dev  切换进dev分支</p>
+                                    <p>  $ git merge dev 合并dev分支到当前分支</p>
+                                    <p>  $ git branch -d dev 删除dev分支</p>
+                                    <p>  $ git diff       工作区与缓存区的差异</p>
+                                    <p>  $ git -cached    缓存区与本地仓库的差异</p>
+                                    <p>   $ git diff HEAD  工作区与本地仓库的区别 </p>
+                        </p>
+                </div>
+                <div class="pager">
+                    <div class="previous"><a href="/">上一篇</a></div>
+                    <div class="next"><a href="/">下一篇</a></div>
+            </div>
+                    
+            </div>
+            <div class="content-right">
+                    <div class="right-module" id="random-tags">
+                        <div class="panel-heading">随机标签云</div>
+                        <div class="panel-body">
+                            <a href="/" v-for="tag in tags" :style="{color:randomColor(), fontSize:randomSize()}">{{tag}}</a>
+                        </div>
+                    </div>
+                    <div class="right-module" id="new-hot">
+                        <div class="panel-heading">最新热门</div>
+                        <ul>
+                            <li v-for="temp in titleList">
+                                <a :href="temp.link">{{temp.title}}</a>
+                            </li>
+                        </ul>
+                </div>
+                <div class="right-module" id="new-comments">
+                        <div class="panel-heading" >最新评论</div>
+                        <ul>
+                            <li v-for="item in commentsList">
+                                <div>
+                                    <span>{{item.name}}</span>
+                                    <span class="pull_right">[{{item.data}}]</span>
+                                </div>
+                                <p>{{item.comment}}</p>
+                            </li>                        
+                        </ul>
+                </div>
+            </div>
+    </div>
    <footer class="footer">
         <ul>
             <li>CSS/DIV</li>
@@ -45,7 +146,6 @@
         </ul>
         <p>Copyright © 2019 个人博客</p>
     </footer>
-    <script src="./js/index.js"></script>
     <script src="./js/base.js"></script>
 </body>
 </html>

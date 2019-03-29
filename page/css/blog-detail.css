@@ -1,0 +1,51 @@
+.edit-artical {
+    position: relative;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0px 0px 3px 3px #bbb;
+    padding: 30px 20px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    word-wrap: break-word;
+    word-break: break-all;
+    overflow: hidden;
+}
+.edit-artical .info {
+    padding: 15px 0 20px 0;
+    border-bottom: 1px solid #bbb;
+    display: block;
+}
+.edit-artical .art-text {
+    padding-top: 20px;
+}
+
+.edit-artical p {
+    height: 20px;
+    line-height: 20px;
+}
+.pager {
+    width: 100%;
+    position: relative;
+}
+.pager div {
+    width: 90px;
+    height: 35px;
+    background-color: #fff;
+    display: inline-block;
+    border-radius: 15px;
+    margin-top: 20px;
+    line-height: 35px;
+    text-align: center;
+}
+.pager div:hover{
+    background-color: #eee;
+}
+.pager div.previous {
+    float: left;
+}
+.pager div.next {
+    float: right;
+}
+.pager div a{
+    color: #337ab7;
+}
