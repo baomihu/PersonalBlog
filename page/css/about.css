@@ -1,0 +1,46 @@
+.description {
+    background: #fff;
+    width: 96%;
+    border-radius: 5px;
+    padding: 10px 15px 20px;
+    box-shadow: 0 0 3px 3px #bbb;
+}
+.description .about-title {
+    width: 95%;
+    font-weight: 600;
+    font-size: 20px;
+    padding: 10px 20px;
+    margin: 20px 0px 20px 0px;
+    border-bottom: 1px solid #b9b9b9;
+}
+.description p {
+    margin-top: 5px;
+    padding-left: 10px;
+}
+.blog-comments {
+    width: 100%;
+    margin-bottom: 20px;
+}
+.blog-comments-msg{
+    margin-top: 20px;
+    padding: 10px;
+    display: inline-block;
+    width: 100%;
+}
+.blog-comment {
+    width: 97%;
+    background: #d9edf7;
+    border: 1px dashed #7ca4c1;
+    padding: 10px 10px 20px 10px;
+    margin-top: 10px;
+    color: #31708f;
+}
+.blog-comment span,
+.blog-comment div{
+    display: inline-block;
+    width: 100%;
+    padding-left: 10px;
+}
+.blog-comment div {
+    margin-top: 10px;
+}

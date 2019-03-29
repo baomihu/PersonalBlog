@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>丰雪的博客</title>
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <a href="/" class="title">丰雪的个人博客 | 技术博客</a>
+            <ul class="menu">
+                <li><a href="/">首页</a></li>
+                <li><a href="/sitemap.html">地图</a></li>
+                <li><a href="/about.html">关于</a></li>
+                <li><a href="/guestbook.html">留言</a></li>
+            </ul>
+            <div class="search_bar">
+                <input type="text" placeholder="请输入关键词查找">
+                <button>搜索</button>
+            </div>
+        </div>
+    </header>
+    <div class="content">
+        <div class="content-left">
+            <div class="every-day" id="every-day">
+                <span class="day">每日一句</span>
+                <p v-html="getContent"></p>
+                <p v-html="getCcontent"></p>
+                <span class="writer" v-html="getWriter"></span>
+                
+            </div> 
+            <div class="artical_list" id="artical_list">
+                <div class="artical" v-for="artical in articalList">
+                    <a @href="artical.link" class="artical-title">{{artical.title}}</a>
+                    <p class="artical-content">{{artical.content}}</p>
+                    <div class="artical-foot">发布于{{artical.data}} | 浏览({{artical.view}}) | Tags：{{artical.tags}}</div>
+                </div>
+            </div>
+        </div>
+        <div class="content-right">
+            <div class="right-module" id="random-tags">
+                <div class="panel-heading">随机标签云</div>
+                <div class="panel-body">
+                    <a href="/" v-for="tag in tags" :style="{color:randomColor(), fontSize:randomSize()}">{{tag}}</a>
+                </div>
+            </div>
+            <div class="right-module" id="new-hot">
+                    <div class="panel-heading">最新热门</div>
+                    <ul>
+                        <li v-for="temp in titleList">
+                            <a :href="temp.link">{{temp.title}}</a>
+                        </li>
+                    </ul>
+            </div>
+            <div class="right-module" id="new-comments">
+                    <div class="panel-heading" >最新评论</div>
+                    <ul>
+                        <li v-for="item in commentsList">
+                            <div>
+                                <span>{{item.name}}</span>
+                                <span class="pull_right">[{{item.data}}]</span>
+                            </div>
+                            <p>{{item.comment}}</p>
+                        </li>                        
+                    </ul>
+            </div>
+            <div class="right-module">
+                    <div class="panel-heading">友情链接</div>
+                    <ul>
+                        <li class="yqlink">
+                                挨踢茶馆
+                        </li>
+                        <li class="yqlink">
+                                挨踢茶馆
+                        </li>
+                        <li class="yqlink">
+                                挨踢茶馆
+                        </li>
+                        <li class="yqlink">
+                                挨踢茶馆
+                        </li>
+                        <li class="yqlink">
+                                挨踢茶馆
+                        </li>
+                        <li class="yqlink">
+                                挨踢茶馆
+                        </li>
+                    </ul>
+            </div>
+        </div>
+    </div>
+   <footer class="footer">
+        <ul>
+            <li>CSS/DIV</li>
+            <li>CSS3</li>
+            <li>HTML5</li>
+            <li>javacript</li>
+            <li>jQuery</li>
+            <li>Webpack</li>
+            <li>Bootstrap</li>
+            <li>ES6</li>
+            <li>git</li>
+            <li>Vue</li>
+            <li>nodejs</li>
+            <li>React</li>
+            
+        </ul>
+        <p>Copyright © 2019 个人博客</p>
+    </footer>
+    <script src="./js/index.js"></script>
+    <script src="./js/base.js"></script>
+</body>
+</html>

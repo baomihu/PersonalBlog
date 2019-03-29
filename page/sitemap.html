@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>站点地图-丰雪个人博客</title>
+    <link rel="stylesheet" href="./css/sitemap.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+
+
+</head>
+<body>
+    <div class="title">个人博客's SitMap</div>
+    <div class="link"><a href="/"><b>博客首页</b></a>>>站点地图</div>
+    <div class="blog-list">
+        <span>最新文章</span>
+        <ul id="new-hot">
+            <!-- <li v-for="item in titleList">{{item.title}}</li> -->
+            <li v-for="temp in titleList">
+                    <a :href="temp.link">{{temp.title}}</a>
+            </li>
+            <li><a href="/blog-deta.html">unocon持的任何文档格式之间进行转换</a></li>
+            <li><a href="/blog-deta.html">fice支持的任何文档格式之间进行转换</a></li>
+        </ul>
+    </div>
+<script src="./js/base.js"></script>
+</body>
+</html>

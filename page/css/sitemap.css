@@ -1,0 +1,48 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+}
+.title {
+    width: 100%;
+    text-align: center;
+    font-weight: 600;
+    line-height: 50px;
+    font-size: 20px;
+    height: 50px;
+}
+.link {
+    border: 1px solid #eee;
+    padding: 10px;
+    width: 95%;
+    margin: 0 auto;
+    font-size: 12px;
+}
+.link a {
+    color: #000;
+}
+.blog-list {
+    width: 95%;
+    margin: 10px auto;
+    border: 1px solid #eee;
+    padding: 10px;
+    font-weight: 600;
+}
+.blog-list span {
+    display: block;
+}
+.blog-list ul {
+    width: 100%;
+    margin: 10px auto;
+    padding: 10px;
+}
+.blog-list ul li {
+    padding-top: 8px;
+}
+.blog-list ul li a{
+    color: #000;
+    cursor: pointer;
+    font-weight: 400;
+    text-decoration: underline;
+}

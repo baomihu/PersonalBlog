@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>关于-个人博客</title>
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/about.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <a href="/" class="title">丰雪的个人博客 | 技术博客</a>
+            <ul class="menu">
+                <li><a href="/">首页</a></li>
+                <li><a href="/sitemap.html">地图</a></li>
+                <li><a href="/about.html">关于</a></li>
+                <li><a href="/guestbook.html">留言</a></li>
+            </ul>
+            <div class="search_bar">
+                <input type="text" placeholder="请输入关键词查找">
+                <button>搜索</button>
+            </div>
+        </div>
+    </header>
+    <div class="content">
+        <div class="content-left">
+            <div class="description">
+                <div class="about-title">关于我</div>
+                <p>巴拉拉巴拉拉巴拉拉</p>
+                <p>巴拉拉巴拉拉巴拉</p>
+                <p>巴拉拉拉巴拉拉</p>
+                <p>巴拉拉巴拉拉巴拉拉巴拉拉</p>
+                <p>巴拉拉</p>
+                <p>巴拉拉巴拉拉</p>
+                <p>巴拉拉巴拉拉巴拉拉</p>
+                <div class="about-title">关于博客</div>
+                <p>巴拉拉巴拉拉巴拉拉</p>
+                <p>巴拉拉巴拉拉巴拉</p>
+                <p>巴拉拉拉巴拉拉</p>
+                <p>巴拉拉巴拉拉巴拉拉巴拉拉</p>
+                <p>巴拉拉</p>
+                <p>巴拉拉巴拉拉</p>
+                <p>巴拉拉巴拉拉巴拉拉</p>
+            </div>
+            <div class="blog-comments">
+                <span class="blog-comments-msg">关于：目前有11条留言</span>
+                <div class="blog-comment">
+                    <span><b>离谱的火烧</b>：发表于 2019年02月17日 21:37[回复]</span>
+                    <div>哈哈啊哈哈哈哈哈啊哈哈哈</div>
+                </div>
+                <div class="blog-comment">
+                    <span><b>离谱的火烧</b>：发表于 2019年02月17日 21:37[回复]</span>
+                    <div>哈哈啊哈哈哈哈哈啊哈哈哈</div>
+                </div>
+                <div class="blog-comment">
+                    <span><b>离谱的火烧</b>：发表于 2019年02月17日 21:37[回复]</span>
+                    <div>哈哈啊哈哈哈哈哈啊哈哈哈</div>
+                </div>
+            </div>
+        </div>
+        <div class="content-right">
+            <div class="right-module" id="random-tags">
+                <div class="panel-heading">随机标签云</div>
+                <div class="panel-body">
+                    <a href="/" v-for="tag in tags" :style="{color:randomColor(), fontSize:randomSize()}">{{tag}}</a>
+                </div>
+            </div>
+            <div class="right-module" id="new-hot">
+                <div class="panel-heading">最新热门</div>
+                <ul>
+                    <li v-for="temp in titleList">
+                        <a :href="temp.link">{{temp.title}}</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="right-module" id="new-comments">
+                <div class="panel-heading">最新评论</div>
+                <ul>
+                    <li v-for="item in commentsList">
+                        <div>
+                            <span>{{item.name}}</span>
+                            <span class="pull_right">[{{item.data}}]</span>
+                        </div>
+                        <p>{{item.comment}}</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <footer class="footer">
+            <ul>
+                <li>C/C++</li>
+                <li>CSS/DIV</li>
+                <li>java</li>
+                <li>javacript</li>
+                <li>Linux</li>
+                <li>Mac</li>
+                <li>PC技术</li>
+                <li>PHP</li>
+                <li>Python</li>
+                <li>Raspberry</li>
+                <li>Ubuntu</li>
+                <li> wordpress</li>
+            </ul>
+            <p>Copyright © 2010-2019 个人博客</p>
+        </footer>
+        <script src="./js/base.js"></script>
+</body>
+
+</html>
